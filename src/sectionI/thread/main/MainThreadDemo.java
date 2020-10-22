@@ -10,6 +10,7 @@ public class MainThreadDemo {
     public static void main(String[] args) {
         // We can store a reference to the main thread
         // inside a reference variable of the Thread class.
-        Thread mainThread;
+        Thread mainThread = Thread.currentThread();
+        // The above reference variable stores a reference to the main thread.
     }
 }
