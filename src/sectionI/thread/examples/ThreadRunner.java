@@ -19,5 +19,8 @@ public class ThreadRunner {
         }
         System.out.println("The task of the " + Thread.currentThread().getName()
                 + " has finished.");
+        Thread2 thread2 = new Thread2();
+        thread2.run();
+//        thread2.start();
     }
 }
