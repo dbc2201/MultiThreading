@@ -12,5 +12,8 @@ public class MainThreadDemo {
         // inside a reference variable of the Thread class.
         Thread mainThread = Thread.currentThread();
         // The above reference variable stores a reference to the main thread.
+        System.out.println(mainThread);
+        mainThread.setName("GLA"); // setter method for the name attribute of a Thread object.
+        System.out.println(mainThread);
     }
 }
