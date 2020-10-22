@@ -7,5 +7,7 @@
 package sectionI.thread.main;
 
 public class MainThreadDemo {
+    public static void main(String[] args) {
 
+    }
 }
