@@ -8,6 +8,8 @@ package sectionI.thread.main;
 
 public class MainThreadDemo {
     public static void main(String[] args) {
-
+        // We can store a reference to the main thread
+        // inside a reference variable of the Thread class.
+        Thread mainThread;
     }
 }
