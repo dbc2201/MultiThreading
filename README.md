@@ -58,3 +58,17 @@ marked as ready to run.
 In this, a thread with a low-priority does not yield the processor, but when it is 
 preempted by a higher-priority processor, it will yield.
  
+# The `Thread` class and the `Runnable` Interface.
+
+Java's multithreading system is built upon the `Thread` class, and its companion
+interface, the `Runnable` interface. 
+
+## The `Main` Thread
+
+- Whenever a Java program executes, one thread starts running immediately,
+this is called the `main` thread of the program.
+
+- It is important for two main reasons.
+1. It is the thread from which all the other threads will be created.
+2. It must be the last thread to finish execution because it performs various shutdown 
+actions.
