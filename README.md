@@ -26,4 +26,35 @@ Thus, we can say that,
 - The `thread-based` multitasking handles the "fine-details".
 
 **Multitasking threads require less resources than multitasking processes.**
+
+## The Java Thread Model
+
+The `multi-threading` capabilities of Java are built-in.
+
+States of a thread in Java
+1. Running (currently executing)
+2. Suspended (paused, after running)
+3. Resumed (starting after paused)
+4. Blocked (not running, and waiting for a resource)
+5. Ready (waiting to run)
+6. Terminated (halted OR stopped)
+
+**Thread Priorities**
+The Java compiler will assign a `priority` to a thread.
+This priority will tell us that how which thread should be treated with respect to others.
+Basically, these are some integer values.
+But a higher priority of a thread can not guarantee that a thread will perform its task
+fast or slow, if it is the only thread running.
+Priority of a thread can only be observed properly once there are two or more threads
+running concurrently in a program space.
+It is basically used to decide that when to switch from one running thread to the next
+(context switch).
+There are basic two rules for context switching
+1. `A thread can voluntarily relinquish(to lose) control`:
+This happens when explicitly yielding, sleeping, or when the thread is blocked.
+In this, all other threads are examines, and the thread with the highest priority will be 
+marked as ready to run.
+2. `A thread can be preempted by a higher-priority thread`:
+In this, a thread with a low-priority does not yield the processor, but when it is 
+preempted by a higher-priority processor, it will yield.
  
