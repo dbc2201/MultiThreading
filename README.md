@@ -72,3 +72,7 @@ this is called the `main` thread of the program.
 1. It is the thread from which all the other threads will be created.
 2. It must be the last thread to finish execution because it performs various shutdown 
 actions.
+
+## Creating a `Thread`
+1. By implementing the `Runnable` interface.
+2. By extending the `Thread` class.
