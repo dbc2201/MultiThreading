@@ -9,7 +9,7 @@ package sectionK.thread.main;
 public class Main {
     public static void main(String[] args) {
         RunnableThread thread1 = new RunnableThread();
-//        thread1.getThread().start(); <- Preferable Choice for running the thread.
+        thread1.getThread().start(); // <- Preferable Choice for running the thread.
 //        thread1.getThread().run();
 //        thread1.run();
     }
