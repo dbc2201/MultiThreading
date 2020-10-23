@@ -15,6 +15,10 @@ public class Thread1 implements Runnable {
         thread = new Thread(this, "T1");
     }
 
+    public Thread getThread() {
+        return thread;
+    }
+
     @Override
     public void run() {
         // here we can specify the task for our thread.
