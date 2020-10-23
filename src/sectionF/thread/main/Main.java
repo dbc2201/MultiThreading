@@ -11,6 +11,6 @@ public class Main {
         // to interact with the main thread
         // first, we have to store the reference to the main thread
         // in a reference variable of the Thread type.
-        Thread mainThread;
+        Thread mainThread = Thread.currentThread();
     }
 }
