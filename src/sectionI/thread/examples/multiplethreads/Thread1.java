@@ -6,5 +6,9 @@
  * */
 package sectionI.thread.examples.multiplethreads;
 
-public class Thread1 {
+public class Thread1 implements Runnable {
+    @Override
+    public void run() {
+
+    }
 }
