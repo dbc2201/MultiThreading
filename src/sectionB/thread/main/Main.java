@@ -11,5 +11,12 @@ public class Main {
         // we have to store the reference to the main thread
         // inside a reference variable of the Thread type.
         Thread mainThread = Thread.currentThread();
+        System.out.println(mainThread);
+        // Thread[1,2,3]
+        // 1. name of the thread,
+        // 2. priority of the thread,
+        // 3. name of the method in which the thread is executed.
+        mainThread.setName("GLA");
+        System.out.println(mainThread);
     }
 }
