@@ -22,5 +22,7 @@ public class Main {
         t1.getThread().start();
 //        t1.run();
 //        t1.getThread().run();
+        ThreadWithThreadClass t2 = new ThreadWithThreadClass();
+        t2.start(); // this will allow the compiler to take control of the thread.
     }
 }
