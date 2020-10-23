@@ -21,6 +21,11 @@ public class Thread2 extends Thread {
         System.out.println("T2 has started.");
         for (int index = 0; index < LIMIT; index++) {
             System.out.println("T2: " + index);
+            try {
+                Thread.sleep(1000L);
+            } catch (InterruptedException e) {
+                System.err.println(e.getMessage());
+            }
         }
         System.out.println("T2 has stopped.");
     }

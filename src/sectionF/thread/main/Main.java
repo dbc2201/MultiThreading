@@ -21,5 +21,7 @@ public class Main {
         System.out.println(mainThread);
         Thread1 t1 = new Thread1();
         t1.getThread().start();
+        Thread2 t2 = new Thread2();
+        t2.start();
     }
 }
