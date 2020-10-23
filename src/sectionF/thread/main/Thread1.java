@@ -8,6 +8,7 @@ package sectionF.thread.main;
 
 public class Thread1 implements Runnable {
 
+    private static final int LIMIT = 10;
     // 1. a private final field of the Thread type
     private final Thread thread;
 
@@ -22,5 +23,10 @@ public class Thread1 implements Runnable {
     @Override
     public void run() {
         // here we can specify the task for our thread.
+        System.out.println(thread.getName() + " has started.");
+        for (int index = 0; index < LIMIT; index++) {
+            System.out.println(thread.getName() + ": " + index);
+        }
+        System.out.println(thread.getName() + " has stopped.");
     }
 }
