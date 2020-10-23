@@ -14,6 +14,10 @@ public class Thread1 implements Runnable {
         this.thread = new Thread(this, threadName);
     }
 
+    public Thread getThread() {
+        return thread;
+    }
+
     @Override
     public void run() {
 
