@@ -26,6 +26,12 @@ public class Thread1 implements Runnable {
         System.out.println(thread.getName() + " has started.");
         for (int index = 0; index < LIMIT; index++) {
             System.out.println(thread.getName() + ": " + index);
+            // pause the thread for some time
+            try {
+                Thread.sleep(2500L);
+            } catch (InterruptedException e) {
+                System.err.println(e.getMessage());
+            }
         }
         System.out.println(thread.getName() + " has stopped.");
     }
