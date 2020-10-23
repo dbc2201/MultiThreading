@@ -76,3 +76,110 @@ actions.
 ## Creating a `Thread`
 1. By implementing the `Runnable` interface.
 2. By extending the `Thread` class.
+
+### 1. By implementing the `Runnable` Interface
+- Create a _definition_ class.
+```java
+class ThreadWithRunnableInterface {
+}
+```
+- Implement the `Runnable` interface in the class.
+```java
+class ThreadWithRunnableInterface implements Runnable {
+}
+```
+- Implement the `run()` method from the Runnable Interface; remember, 
+the `java.lang.Runnable` interface is a functional interface.
+```java
+class ThreadWithRunnable implements Runnable {
+    @Override
+    public void run() {}
+}
+```
+- Create a _field_ of the `Thread` type for the class; make it
+`private` and `final`.
+```java
+class ThreadWithRunnable implements Runnable {
+    private final Thread thread;
+    @Override
+    public void run() {}
+}
+```
+- Create a `public` constructor for the class.
+```java
+class ThreadWithRunnable implements Runnable {
+    private final Thread thread;
+
+    public ThreadWithRunnable() {}    
+
+    @Override
+    public void run() {}
+}
+```
+- Initialize the _`thread` field_ inside the constructor.
+> The String parameter inside the constructor of the Thread class
+> is the name of the thread.
+```java
+class ThreadWithRunnable implements Runnable {
+    private final Thread thread;
+
+    public ThreadWithRunnable() {
+        thread = new Thread(this, "Thread Name");
+    }    
+
+    @Override
+    public void run() {}
+}
+``` 
+- **Optional**: If you would like to expose the thread field outside this class,
+you may do so by defining a _`getter`_ method for the field.
+```java
+class ThreadWithRunnable implements Runnable {
+    private final Thread thread;
+
+    public ThreadWithRunnable() {
+        thread = new Thread(this, "Thread Name");
+    }    
+
+    public Thread getThread() {
+        return thread;
+    }
+
+    @Override
+    public void run() {}
+}
+``` 
+**AND THAT'S ABOUT IT!!**
+Now, you can create an object of this class and call the `start()` method to 
+execute this thread.
+```java
+class ThreadRunner {
+    public static void main(String[] args){
+        ThreadWithRunnable thread1 = new ThreadWithRunnable();
+        thread1.start();
+    }
+}
+```
+**EXTRA**: You can specify your thread to sleep(pause) for some time using the
+_static_ `sleep()` method of the `java.lang.Thread` class.  
+Just remember that this method might cause an `InterruptedException`,
+since this is an unhandled exception, we will wrap the `sleep()` method inside
+a `try/catch` block.
+```java
+class ThreadWithRunnable implements Runnable {
+    private final Thread thread;
+
+    public ThreadWithRunnable() {
+        thread = new Thread(this, "Thread Name");
+    }    
+
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(500L);
+        } catch (InterruptedException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+}
+``` 
