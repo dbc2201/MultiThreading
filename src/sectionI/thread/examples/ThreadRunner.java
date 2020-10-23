@@ -17,6 +17,7 @@ public class ThreadRunner {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         System.out.println("The task of the " + Thread.currentThread().getName()
                 + " has finished.");
         Thread2 thread2 = new Thread2();
