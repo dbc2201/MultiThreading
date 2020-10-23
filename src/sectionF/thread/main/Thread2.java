@@ -6,6 +6,22 @@
  * */
 package sectionF.thread.main;
 
-public class Thread2 {
+public class Thread2 extends Thread {
 
+    private static final int LIMIT = 10;
+
+    // 1 create a public constructor
+    public Thread2() {
+        // we will call the super constructor
+        super("T2");
+    }
+
+    @Override
+    public void run() {
+        System.out.println("T2 has started.");
+        for (int index = 0; index < LIMIT; index++) {
+            System.out.println("T2: " + index);
+        }
+        System.out.println("T2 has stopped.");
+    }
 }
