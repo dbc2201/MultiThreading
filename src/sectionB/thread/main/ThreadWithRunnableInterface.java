@@ -8,6 +8,12 @@ package sectionB.thread.main;
 
 public class ThreadWithRunnableInterface implements Runnable {
 
+    private final Thread thread;
+
+    public ThreadWithRunnableInterface() {
+        thread = new Thread(this, "T1");
+    }
+
     @Override
     public void run() {
 
