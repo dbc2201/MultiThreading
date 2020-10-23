@@ -14,6 +14,10 @@ public class ThreadWithRunnableInterface implements Runnable {
         thread = new Thread(this, "T1");
     }
 
+    public Thread getThread() {
+        return thread;
+    }
+
     @Override
     public void run() {
 
