@@ -6,6 +6,17 @@
  * */
 package sectionF.thread.main;
 
-public class Thread1 {
+public class Thread1 implements Runnable {
 
+    // 1. a private final field of the Thread type
+    private final Thread thread;
+
+    public Thread1() {
+        thread = new Thread(this, "T1");
+    }
+
+    @Override
+    public void run() {
+        // here we can specify the task for our thread.
+    }
 }
