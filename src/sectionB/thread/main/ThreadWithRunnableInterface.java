@@ -8,6 +8,7 @@ package sectionB.thread.main;
 
 public class ThreadWithRunnableInterface implements Runnable {
 
+    private static final int LIMIT = 10;
     private final Thread thread;
 
     public ThreadWithRunnableInterface() {
@@ -20,6 +21,10 @@ public class ThreadWithRunnableInterface implements Runnable {
 
     @Override
     public void run() {
-
+        System.out.println(thread.getName() + " has started.");
+        for (int index = 0; index < LIMIT; index++) {
+            System.out.println(thread.getName() + ": " + index);
+        }
+        System.out.println(thread.getName() + " has stopped.");
     }
 }
