@@ -6,5 +6,6 @@
  * */
 package sectionB.thread.main;
 
-public class ThreadWithThreadClass {
+public class ThreadWithThreadClass extends Thread {
+
 }
