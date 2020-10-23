@@ -19,5 +19,7 @@ public class Main {
         // 3. the name of the method which is executing the current thread.
         mainThread.setName("GLA");
         System.out.println(mainThread);
+        Thread1 t1 = new Thread1();
+        t1.getThread().start();
     }
 }
