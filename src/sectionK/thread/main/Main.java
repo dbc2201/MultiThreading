@@ -12,10 +12,13 @@ public class Main {
         // the compiler will automatically create a thread called the
         // 'main' thread.
         Thread mainThread = Thread.currentThread();
+        mainThread.setName("GLA");
         System.out.println(mainThread.getName());
         RunnableThread thread1 = new RunnableThread();
         thread1.getThread().start(); // <- Preferable Choice for running the thread.
 //        thread1.getThread().run();
 //        thread1.run();
+        ThreadClassThread thread2 = new ThreadClassThread();
+        thread2.start();
     }
 }
