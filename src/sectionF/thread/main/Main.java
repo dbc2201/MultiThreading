@@ -17,5 +17,7 @@ public class Main {
         // 1. the name of the thread,
         // 2. the priority of the thread,
         // 3. the name of the method which is executing the current thread.
+        mainThread.setName("GLA");
+        System.out.println(mainThread);
     }
 }
