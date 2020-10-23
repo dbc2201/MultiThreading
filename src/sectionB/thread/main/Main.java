@@ -18,5 +18,9 @@ public class Main {
         // 3. name of the method in which the thread is executed.
         mainThread.setName("GLA");
         System.out.println(mainThread);
+        ThreadWithRunnableInterface t1 = new ThreadWithRunnableInterface();
+        t1.getThread().start();
+//        t1.run();
+//        t1.getThread().run();
     }
 }
