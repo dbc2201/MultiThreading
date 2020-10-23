@@ -16,6 +16,13 @@ public class Main {
         // uses it for cleanup operations.
         // To interact with the main thread, we have to create a reference
         // variable of the Thread type.
-        Thread mainThread;
+        Thread mainThread = Thread.currentThread();
+        System.out.println(mainThread);
+        // Thread[1,2,3]
+        // 1 -> name of the thread
+        // 2 -> priority of the thread (int)
+        // 3 -> name of the method that is executing the thread
+        mainThread.setName("GLA");
+        System.out.println(mainThread);
     }
 }
