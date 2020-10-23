@@ -6,12 +6,12 @@
  * */
 package sectionI.thread.examples.multiplethreads;
 
-public class Thread1 implements Runnable {
+public class CustomThread implements Runnable {
     private final Thread thread;
     private String threadName;
     private static final int LIMIT = 20;
 
-    public Thread1(String threadName) {
+    public CustomThread(String threadName) {
         this.thread = new Thread(this, threadName);
     }
 
