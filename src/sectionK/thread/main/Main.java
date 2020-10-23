@@ -8,6 +8,11 @@ package sectionK.thread.main;
 
 public class Main {
     public static void main(String[] args) {
+        // When the main() method starts executing,
+        // the compiler will automatically create a thread called the
+        // 'main' thread.
+        Thread mainThread = Thread.currentThread();
+        System.out.println(mainThread.getName());
         RunnableThread thread1 = new RunnableThread();
         thread1.getThread().start(); // <- Preferable Choice for running the thread.
 //        thread1.getThread().run();
