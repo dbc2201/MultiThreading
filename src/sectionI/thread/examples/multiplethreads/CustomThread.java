@@ -9,10 +9,16 @@ package sectionI.thread.examples.multiplethreads;
 public class CustomThread implements Runnable {
     private final Thread thread;
     private String threadName;
+    private long sleepDurationMill;
     private static final int LIMIT = 20;
 
     public CustomThread(String threadName) {
         this.thread = new Thread(this, threadName);
+    }
+
+    public CustomThread(String threadName, long sleepDurationMill) {
+        this.thread = new Thread(this, threadName);
+        this.sleepDurationMill = sleepDurationMill;
     }
 
     public Thread getThread() {
@@ -25,7 +31,7 @@ public class CustomThread implements Runnable {
         for (int i = 0; i < LIMIT; i++) {
             System.out.println(this.thread.getName() + ": " + i);
             try {
-                Thread.sleep(1000L);
+                Thread.sleep(sleepDurationMill > 0L ? sleepDurationMill : 1000L);
             } catch (InterruptedException e) {
                 System.err.println(e.getMessage());
             }
