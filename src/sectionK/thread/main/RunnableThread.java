@@ -6,5 +6,25 @@
  * */
 package sectionK.thread.main;
 
-public class RunnableThread {
+public class RunnableThread implements Runnable {
+
+    private static final int LIMIT = 10;
+    private final Thread thread;
+
+    public RunnableThread() {
+        thread = new Thread(this, "T1");
+    }
+
+    public Thread getThread() {
+        return thread;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("The thread \"" + thread.getName() + "\" has started.");
+        for (int index = 0; index < LIMIT; index++) {
+            System.out.println(thread.getName() + ": " + index);
+        }
+        System.out.println("The thread \"" + thread.getName() + "\" has stopped.");
+    }
 }
