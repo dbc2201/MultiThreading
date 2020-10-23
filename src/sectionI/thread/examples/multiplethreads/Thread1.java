@@ -10,6 +10,10 @@ public class Thread1 implements Runnable {
     private final Thread thread;
     private String threadName;
 
+    public Thread1(String threadName) {
+        this.thread = new Thread(this, threadName);
+    }
+
     @Override
     public void run() {
 
