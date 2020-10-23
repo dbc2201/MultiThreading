@@ -6,6 +6,10 @@
  * */
 package sectionB.thread.main;
 
-public class ThreadWithRunnableInterface {
+public class ThreadWithRunnableInterface implements Runnable {
 
+    @Override
+    public void run() {
+
+    }
 }
