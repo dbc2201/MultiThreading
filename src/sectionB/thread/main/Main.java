@@ -6,6 +6,8 @@
  * */
 package sectionB.thread.main;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
         // we have to store the reference to the main thread
@@ -24,5 +26,19 @@ public class Main {
 //        t1.getThread().run();
         ThreadWithThreadClass t2 = new ThreadWithThreadClass();
         t2.start(); // this will allow the compiler to take control of the thread.
+
+        Runnable customThread = () -> {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Thread with lambda",
+                    "Title",
+                    JOptionPane.PLAIN_MESSAGE
+            );
+        };
+
+        // JavaFx: uses a lot of lambda expressions!
+
+        customThread.run();
+
     }
 }
