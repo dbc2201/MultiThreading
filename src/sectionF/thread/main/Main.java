@@ -38,5 +38,17 @@ public class Main {
             }
         };
         runnableThread.run();
+        // By using a lambda expression,
+        // we are able to use code as data for a variable.
+        int number = 4;
+        Runnable lambdaThread = () -> {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Thread with Lambda Expression",
+                    "Lambda Thread",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+        };
+        lambdaThread.run();
     }
 }
