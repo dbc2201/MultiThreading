@@ -1,4 +1,8 @@
 package sectionF.thread.main;
 
-public class CustomThread {
+public class CustomThread implements Runnable {
+    @Override
+    public void run() {
+
+    }
 }
