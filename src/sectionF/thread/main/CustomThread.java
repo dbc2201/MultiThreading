@@ -3,11 +3,22 @@ package sectionF.thread.main;
 import javax.swing.JOptionPane;
 
 public class CustomThread implements Runnable {
+
+    private final String threadName;
+
+    public CustomThread(String threadName) {
+        this.threadName = threadName;
+    }
+
+    public String getThreadName() {
+        return threadName;
+    }
+
     @Override
     public void run() {
         JOptionPane.showMessageDialog(
                 null,
-                "The thread has started!",
+                threadName + " has started!",
                 "Custom Thread",
                 JOptionPane.WARNING_MESSAGE
         );
