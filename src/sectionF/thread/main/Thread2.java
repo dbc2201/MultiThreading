@@ -6,6 +6,8 @@
  * */
 package sectionF.thread.main;
 
+import javax.swing.*;
+
 public class Thread2 extends Thread {
 
     private static final int LIMIT = 10;
@@ -19,14 +21,20 @@ public class Thread2 extends Thread {
     @Override
     public void run() {
         System.out.println("T2 has started.");
-        for (int index = 0; index < LIMIT; index++) {
-            System.out.println("T2: " + index);
-            try {
-                Thread.sleep(1000L);
-            } catch (InterruptedException e) {
-                System.err.println(e.getMessage());
-            }
-        }
+//        for (int index = 0; index < LIMIT; index++) {
+//            System.out.println("T2: " + index);
+//            try {
+//                Thread.sleep(1000L);
+//            } catch (InterruptedException e) {
+//                System.err.println(e.getMessage());
+//            }
+//        }
+        JOptionPane.showMessageDialog(
+                null,
+                "T2 has started",
+                "Thread with Thread Class",
+                JOptionPane.PLAIN_MESSAGE
+        );
         System.out.println("T2 has stopped.");
     }
 }

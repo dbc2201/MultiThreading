@@ -6,6 +6,8 @@
  * */
 package sectionF.thread.main;
 
+import javax.swing.*;
+
 public class Thread1 implements Runnable {
 
     private static final int LIMIT = 10;
@@ -24,15 +26,22 @@ public class Thread1 implements Runnable {
     public void run() {
         // here we can specify the task for our thread.
         System.out.println(thread.getName() + " has started.");
-        for (int index = 0; index < LIMIT; index++) {
-            System.out.println(thread.getName() + ": " + index);
-            // pause the thread for some time
-            try {
-                Thread.sleep(2500L);
-            } catch (InterruptedException e) {
-                System.err.println(e.getMessage());
-            }
-        }
+//        for (int index = 0; index < LIMIT; index++) {
+//            System.out.println(thread.getName() + ": " + index);
+//            // pause the thread for some time
+//            try {
+//                Thread.sleep(2500L);
+//            } catch (InterruptedException e) {
+//                System.err.println(e.getMessage());
+//            }
+//        }
+        JOptionPane.showMessageDialog(
+                null,
+                thread.getName() + " has started!",
+                "Thread with Runnable Interface",
+                JOptionPane.PLAIN_MESSAGE
+        );
+
         System.out.println(thread.getName() + " has stopped.");
     }
 }
