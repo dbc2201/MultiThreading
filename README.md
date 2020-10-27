@@ -183,4 +183,63 @@ class ThreadWithRunnable implements Runnable {
     }
 }
 ``` 
+---
+### 2. By extending the `Thread` class.
 
+- Create a definition class.
+```java
+class ThreadWithThreadClass {
+}
+```
+
+- Extend the `java.lang.Thread` class; since the `Thread` class is present in the 
+`java.lang` package, we do not need to import it specifically.
+```java
+class ThreadWithThreadClass extends Thread {
+}
+```
+
+- Create a constructor and call the constructor of the parent class (The `Thread` class) 
+via `super()`. In the call to the `super()` constructor, pass the name of the thread.
+```java
+class ThreadWithThreadClass extends Thread {
+
+    public ThreadWithThreadClass() {
+        super("SimpleThread");
+    }
+
+}
+```
+
+- **EXTRA** If you want, you can overload the constructor also like this
+```java
+class ThreadWithThreadClass extends Thread {
+
+    public ThreadWithThreadClass() {
+        super("SimpleThread");
+    }
+
+    public ThreadWithThreadClass(String threadName){
+        super(threadName);
+    }
+
+}
+```
+- Next, we need to override the `run()` method from the `Thread` class.
+```java
+class ThreadWithThreadClass extends Thread {
+
+    public ThreadWithThreadClass() {
+        super("SimpleThread");
+    }
+
+    @Override
+    public void run() {
+        // Specify the task for your thread here!
+    }   
+
+}
+```
+**AND THAT'S ABOUT IT!!**
+Now, you can create an object of this class and call the `run()` method to 
+execute this thread.
