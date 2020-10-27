@@ -243,3 +243,11 @@ class ThreadWithThreadClass extends Thread {
 **AND THAT'S ABOUT IT!!**
 Now, you can create an object of this class and call the `run()` method to 
 execute this thread.
+```java
+class ThreadRunner {
+    public static void main(String[] args){
+        ThreadWithThreadClass thread1 = new ThreadWithThreadClass("PUBG");
+        thread1.run();
+    }
+}
+```
