@@ -6,6 +6,8 @@
  * */
 package sectionF.thread.main;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
         // to interact with the main thread
@@ -23,5 +25,18 @@ public class Main {
         t1.getThread().start();
         Thread2 t2 = new Thread2();
         t2.start();
+        // Anonymous Class (Anonymous: No Name) -> A class with no name!
+        Runnable runnableThread = new Runnable() {
+            @Override
+            public void run() {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Thread with Anonymous class",
+                        "Anonymous class",
+                        JOptionPane.ERROR_MESSAGE
+                );
+            }
+        };
+        runnableThread.run();
     }
 }
