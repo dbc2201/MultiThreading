@@ -5,9 +5,15 @@ import javax.swing.JOptionPane;
 public class CustomThread implements Runnable {
 
     private final String threadName;
+    private final Thread thread;
 
     public CustomThread(String threadName) {
         this.threadName = threadName;
+        this.thread = new Thread(this, threadName);
+    }
+
+    public Thread getThread() {
+        return thread;
     }
 
     public String getThreadName() {
