@@ -23,4 +23,15 @@ public class CustomThread implements Runnable {
                 JOptionPane.WARNING_MESSAGE
         );
     }
+
+    public Runnable createAuxiliaryThread() {
+        return () -> {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Auxiliary Thread",
+                    "AUX THR",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+        };
+    }
 }
