@@ -3,18 +3,19 @@ package sectionB.thread.main;
 import javax.swing.*;
 
 public class LambdaThread {
-    public void createLambdaExpressionThread() {
-        Runnable lambdaExpressionThread = () -> JOptionPane.showOptionDialog(
+
+    public Runnable createThread() {
+        return () -> JOptionPane.showMessageDialog(
                 null,
-                "The Lambda Thread from inside the method",
-                "Lambda Thread Inside The Method",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                null,
-                null
+                "Simple Lambda Thread",
+                "createThread() method",
+                JOptionPane.WARNING_MESSAGE
         );
-        lambdaExpressionThread.run();
+    }
+
+    public void createLambdaExpressionThread() {
+        Runnable thread = createThread();
+        thread.run();
     }
 }
 class LambdaThreadMain {
