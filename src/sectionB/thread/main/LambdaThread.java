@@ -4,6 +4,9 @@ import javax.swing.*;
 
 public class LambdaThread {
 
+    // The State of the thread
+    // The Priority of the thread
+
     public Runnable createThread() {
         return () -> JOptionPane.showMessageDialog(
                 null,

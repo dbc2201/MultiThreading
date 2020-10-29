@@ -6,6 +6,8 @@
  * */
 package sectionB.thread.main;
 
+import javax.swing.*;
+
 public class ThreadWithRunnableInterface implements Runnable {
 
     private static final int LIMIT = 10;
@@ -21,16 +23,13 @@ public class ThreadWithRunnableInterface implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(thread.getName() + " has started.");
-        for (int index = 0; index < LIMIT; index++) {
-            System.out.println(thread.getName() + ": " + index);
-            // pause the thread for some time
-            try {
-                Thread.sleep(1500L);
-            } catch (InterruptedException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-        System.out.println(thread.getName() + " has stopped.");
+        JOptionPane.showMessageDialog(
+                null,
+                "Thread using Runnable Interface.\n" +
+                        "Thread Priority: " + thread.getPriority() + ".\n" +
+                        "Thread State: " + thread.getState() + ".",
+                "Thread using Runnable Interface",
+                JOptionPane.INFORMATION_MESSAGE
+        );
     }
 }
