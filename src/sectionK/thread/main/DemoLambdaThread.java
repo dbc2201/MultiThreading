@@ -5,12 +5,24 @@ import javax.swing.*;
 public class DemoLambdaThread {
 
     public void createLambdaThread() {
-        Runnable lambdaThread = () -> JOptionPane.showMessageDialog(
-                null,
-                "This thread was created inside a method of a definition class!",
-                "Lambda Thread",
-                JOptionPane.WARNING_MESSAGE
-        );
+        Runnable lambdaThread = () -> {
+            final Thread thread = new Thread("T1");
+            thread.setPriority(Thread.MAX_PRIORITY);
+            JOptionPane.showMessageDialog(
+                    null,
+                    "This thread was created inside a method of a definition class!\n"
+                            + "Thread State: " + thread.getState() + "\n"
+                            + "Thread Priority: " + thread.getPriority(),
+                    "Lambda Thread",
+                    JOptionPane.WARNING_MESSAGE
+                    /*
+                    * Thread Priorities
+                    * Minimum Priority: 1
+                    * Maximum Priority: 10
+                    * Normal Priority: 5 (Default Priority)
+                    * */
+            );
+        };
         lambdaThread.run();
     }
 
