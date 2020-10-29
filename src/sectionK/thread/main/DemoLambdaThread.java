@@ -7,7 +7,14 @@ public class DemoLambdaThread {
     public void createLambdaThread() {
         Runnable lambdaThread = () -> {
             final Thread thread = new Thread("T1");
-            thread.setPriority(Thread.MAX_PRIORITY);
+            thread.setPriority(4);
+            /*
+            * (0 - 5), 0 MIN_PRIORITY
+            * (5 - 10), 5 NORM_PRIORITY
+            * That is the discretion of the CPU itself.
+            * OS: CPU Cycles MP:
+            * 2.3GHz
+            * */
             JOptionPane.showMessageDialog(
                     null,
                     "This thread was created inside a method of a definition class!\n"
