@@ -15,3 +15,10 @@ public class DemoLambdaThread {
     }
 
 }
+
+class Main1 {
+    public static void main(String[] args) {
+        DemoLambdaThread object1 = new DemoLambdaThread();
+        object1.createLambdaThread();
+    }
+}
